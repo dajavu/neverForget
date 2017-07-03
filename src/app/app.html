@@ -1,0 +1,27 @@
+<ion-menu [content]="content">
+	<ion-header>
+		<ion-toolbar color="pink">
+			<ion-title>Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<div class="menu-header" text-center>
+			<img class="menu-avatar"/>
+			<div class="menu-name">{{user.name}}</div>
+			<div class="menu-detail">人生来就是孤单的!</div>
+		</div>
+		
+		<div class="menu-list">
+			<div>TATTOO GUIDE</div>
+			<div>SHOWROOM</div>
+			<div>BEST/RATINGE</div>
+			<div>MAGAZINE</div>
+			<div (click)="logout()" menuClose>LOGOUT</div>
+		</div>
+
+		<div class="menu-footer">PasDajavu@outlook.com</div>
+	</ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,29 @@
+<ion-content>
+	<div class="login-input" [@loginInput] *ngIf="!isWelcome"> 
+		<ion-list>
+			<div class="login-header">该怎么称呼您：</div>
+			<ion-item class="login-input-item">
+				<ion-label floating>昵称</ion-label>
+				<ion-input [(ngModel)]="user.name" type="text" [maxlength]="20" required></ion-input>
+			</ion-item>
+		</ion-list>
+		<div padding text-center>
+			<button ion-button class="login-submit" color="pink" (click)="login()">登陆</button>
+		</div>
+	</div>
+	<div class="login-welcome" *ngIf="isWelcome">
+		<div class="circle_process">
+			<div class="wrapper right">
+				<div class="circle rightcircle"></div>
+			</div>
+			<div class="wrapper left">
+				<div class="circle leftcircle"></div>
+			</div>
+		</div>
+		<div class="login-detail">
+			<div>欢迎您:</div>
+			<div>{{user.name}}</div>
+		</div>
+	</div>
+
+</ion-content>

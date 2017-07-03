@@ -1,0 +1,22 @@
+.base-card{
+	padding:5px 10px;
+	margin-bottom:10px; 
+	box-shadow: 3px 3px 6px $colorShadow;
+	border: 1px solid $colorLine;
+	background: white;
+	line-height: 35px;
+	position: relative;
+}
+.card-content{
+	position: relative;
+	border-bottom: 1px solid $colorLine;
+}
+.card-image{
+	font-size: 20px;
+	position: relative;
+	top: 3px;
+	color: #DCA1A1;
+}
+.card-name,.card-date{
+	padding: 0px 5px;
+}

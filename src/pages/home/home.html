@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-navbar color="pink">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>列表</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="addRemind()">
+				<ion-icon name="md-add"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="base-card" *ngFor="let remind of remindList" [@cardShow]>
+		<div class="card-content">
+			<ion-icon class="card-image" name="ios-snow"></ion-icon>
+			<span class="card-name">古佩</span>
+			<span class="card-date">09-17</span>
+		</div>
+		<div class="card-detail">一定不要忘记哦！</div>
+
+		<ion-fab top right>
+			<button ion-fab mini color="pink"><ion-icon name="add"></ion-icon></button>
+			<ion-fab-list side="left">
+				<button ion-fab><ion-icon name="ios-trash"></ion-icon></button>
+			</ion-fab-list>
+		</ion-fab>
+	</div>
+</ion-content>

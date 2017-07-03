@@ -1,0 +1,160 @@
+.login-header{
+	text-align: center;
+	font-size: 17px;
+	font-family: "微软雅黑";
+	color: $color;
+	margin-bottom:15px;
+}
+.login-submit{
+	width: 120px;
+	height: 38px;
+	margin-top: 40px;
+}
+.login-input{
+	opacity: 1;
+	width: 100%;
+	height: 100%;
+	padding: 100px 20px 0px 20px;
+}
+.login-input-item{
+	background: $colorBackgroud;
+}
+
+//-------动画---------------、
+//等待时间
+$date1:0.5s;
+//圆圈旋转时间
+$date2:0.6s;
+//圆圈上移时间
+$date3:0.3s;
+//文字出现时间
+$date4:0.3s;
+//文字展示时间
+$date5:0.6s;
+//欢迎页面移除时间
+$date6:0.5s;
+
+//圆圈大小
+$circleSize: 160px;
+
+.login-welcome{
+	margin-top: 200px;
+	text-align: center;
+	font-size: 22px;
+	line-height: 35px;
+	color: $color;	
+	position: relative;
+	-webkit-animation: textHide $date6 linear $date1+$date2+$date3+$date4+$date5 1 forwards;
+}
+
+.login-detail{
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+	color: $color;
+	-webkit-animation: textShow $date4 linear $date1+$date2+$date3 1 forwards;
+}
+
+.circle_process {
+	position: relative;
+	width: $circleSize;
+	height: $circleSize;
+	margin: 0px auto;
+	-webkit-animation: topGap $date3 linear $date1+$date2 1;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.circle_process .wrapper {
+	width: $circleSize/2;
+	height: $circleSize;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+}
+
+.circle_process .right {
+	right: 0;
+}
+
+.circle_process .left {
+	left: 0;
+}
+
+.circle_process .circle {
+	width: $circleSize;
+	height: $circleSize;
+	border: 2px solid transparent;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	transform: rotate(-135deg);
+}
+
+.circle_process .rightcircle {
+	border-top: 2px solid $colorPink;
+	border-right: 2px solid $colorPink;
+	right: 0;
+	-webkit-animation: circle_right $date2 linear $date1 1 forwards;
+}
+
+.circle_process .leftcircle {
+	border-bottom: 2px solid $colorPink;
+	border-left: 2px solid $colorPink;
+	left: 0;
+	-webkit-animation: circle_left $date2 linear $date1+$date2/2 1 forwards;  
+}
+
+@-webkit-keyframes circle_right {
+	0% {
+		-webkit-transform: rotate(-135deg);
+	}
+	50%,
+	100% {
+		-webkit-transform: rotate(45deg);
+	}
+}
+
+@-webkit-keyframes circle_left {
+	0% {
+		-webkit-transform: rotate(-135deg);
+	}
+	50%,
+	100% {
+		-webkit-transform: rotate(45deg);
+	}
+}
+
+//圆圈上移动画
+@-webkit-keyframes topGap {
+	0% {
+		top: 0px;
+	}
+	100% {
+		top: -40px;
+	}
+}
+
+//字体显示动画
+@-webkit-keyframes textShow {
+	0%{
+		left: -10px;
+	}
+	100% {
+		opacity: 1;
+		left: 0px;
+	}
+}
+
+//欢迎页面消失动画
+@-webkit-keyframes textHide {
+	0%{
+		top: 0px;
+		opacity: 1;
+	}
+	100% {
+		top: -1000px;
+		opacity: 0;
+	}
+}
