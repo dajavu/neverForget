@@ -26,7 +26,10 @@ platforms/
 plugins/
 plugins/android.json
 plugins/ios.json
-www/
+www/*
+!www/assets/
+www/assets/*
+!www/assets/image/
 $RECYCLE.BIN/
 
 .DS_Store
